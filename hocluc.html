@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp hạng học lực</title>
+</head>
+<body>
+    <label for="name">Họ tên:</label>
+    <input type="text" id="name">
+    <label for="bkt">Bài kiểm tra:</label>
+    <input type="number" id="bkt">
+    <label for="giuaky">Thi giữa kỳ:</label>
+    <input type="number" id="giuaky">
+    <label for="cuoiky">Thi cuối kỳ:</label>
+    <input type="number" id="cuoiky"><br />
+    <button type="button" value="btn" onclick="tinhtoan()">Tính điểm</button><br />
+    <h4 id="tongket"></h4>
+<script type="text/javascript">
+    function tinhtoan(){
+        var a = parseFloat(document.getElementById("bkt").value);
+        var b = parseFloat(document.getElementById("giuaky").value);
+        var c = parseFloat(document.getElementById("cuoiky").value);
+        var n = document.getElementById("name").value;
+        var tk = (a+b*2+c*3)/6;
+        {
+            if (tk>8.0)
+            {document.getElementById("tongket").innerHTML= "Học sinh "+n + " được điểm trung bình là " +tk +" đạt học lực giỏi.";}
+            else if (tk>6.5)
+            {document.getElementById("tongket").innerHTML= "Học sinh "+n + " được điểm trung bình là " +tk +" đạt học lực khá.";}
+            else if (tk>5.0)
+            {document.getElementById("tongket").innerHTML= "Học sinh "+n + " được điểm trung bình là " +tk +" đạt học lực trung bình.";}
+            else if (tk>3.5)
+            {document.getElementById("tongket").innerHTML= "Học sinh "+n + " được điểm trung bình là " +tk +" đạt học lực yếu.";}
+            else
+            {document.getElementById("tongket").innerHTML= "Học sinh "+n + " được điểm trung bình là " +tk +" đạt học lực kém.";}
+        }
+    }
+</script>
+</body>
+</html>

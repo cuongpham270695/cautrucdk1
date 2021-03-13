@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị lớn nhất</title>
+</head>
+<body>
+<label for="num1">Nhập số thứ 1:</label>
+<input type="number" id="num1" value="number"><br/>
+<label for="num2">Nhập số thứ 2:</label>
+<input type="number" id="num2" value="number"><br/>
+<label for="num3">Nhập số thứ 3:</label>
+<input type="number" id="num3" value="number">
+<button type="button" value="btn" onclick="check()">Kiểm tra</button>
+<h4 id="max"></h4>
+<script type="text/javascript">
+    function check(){
+        var a= parseInt(document.getElementById("num1").value);
+        var b= parseInt(document.getElementById("num2").value);
+        var c= parseInt(document.getElementById("num3").value);
+        if(a>b&&a>c){
+            document.getElementById("max").innerHTML= +a +" là số lớn nhất";}
+        else if(b>a&&b>c){
+            document.getElementById("max").innerHTML= +b +" là số lớn nhất";}
+        else if(c>a&&c>b){
+            document.getElementById("max").innerHTML= +c +" là số lớn nhất";}
+    }
+</script>
+</body>
+</html>

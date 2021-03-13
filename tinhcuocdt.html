@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính cước điện thoại</title>
+</head>
+<body>
+        <label for="minutes">Nhập thời gian gọi điện (phút):</label>
+        <input type="number" id="minutes" value="num">
+        <button type="button" onclick="checkMoney()">Tính cước</button>
+        <h4 id="total" style="color: blue"></h4>
+<script type="text/javascript">
+    function checkMoney(){
+        var permanent = 25000;
+        var time = document.getElementById("minutes").value;
+        {
+            if (time<=50)
+            {
+                var money= permanent + 600*time;
+                document.getElementById("total").innerHTML="Tổng cộng bạn đã gọi " +time + " phút, số tiền bạn phải trả là " +money +"VNĐ";
+            }
+            else if (time<=200)
+            {
+                var money= permanent + 50*600 + (time-50)*400;
+                document.getElementById("total").innerHTML="Tổng cộng bạn đã gọi " +time + " phút, số tiền bạn phải trả là " +money +"VNĐ";
+            }
+            else
+            {
+                var money= permanent + 50*600 + 150*400 + (time-200)*200;
+                document.getElementById("total").innerHTML="Tổng cộng bạn đã gọi " +time + " phút, số tiền bạn phải trả là " +money +"VNĐ";
+            }
+        }
+    }
+</script>
+</body>
+</html>
